@@ -10,14 +10,14 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class mainApp extends Application {
-  private Stage primaryStage;
+  private static Stage primaryStage;
   private AnchorPane rootLayout;
 
   @Override
   public void start(Stage primaryStage) {
-      this.primaryStage = primaryStage;
-      this.primaryStage.setTitle("Login");
-      this.primaryStage.initStyle(StageStyle.UNDECORATED);
+	  mainApp.primaryStage = primaryStage;
+      mainApp.primaryStage.setTitle("Login");
+      mainApp.primaryStage.initStyle(StageStyle.UNDECORATED);
 
       try {
           FXMLLoader loader = new FXMLLoader();
@@ -38,7 +38,7 @@ public class mainApp extends Application {
    * Returns the main stage.
    * @return
    */
-  public Stage getPrimaryStage() {
+  public static Stage getPrimaryStage() {
 	  return primaryStage;
   }
 

@@ -1,0 +1,22 @@
+.mainButton {
+	-fx-background-color: #A5F2FF;
+	-fx-background-radius: 500;
+	-fx-font-size: 20;
+	-fx-padding:  10 50 10 50;
+	-fx-text-fill: #0E1118;
+	transition: all 0.1s ease-in-out;
+}
+
+.mainButton:hover {
+	-fx-background-color: #0E1118;
+	-fx-text-fill: #A5F2FF;
+}
+
+.highlightedText {
+	-fx-text-fill: #767897;
+	transition: all 0.1s ease-in;
+}
+
+.highlightedText:hover {
+	-fx-text-fill: #A5F2FF;
+}
