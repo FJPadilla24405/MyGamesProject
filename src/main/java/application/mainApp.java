@@ -12,34 +12,26 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class mainApp extends Application {
-
-	private Stage primaryStage;
+  private Stage primaryStage;
   private AnchorPane rootLayout;
 
   @Override
   public void start(Stage primaryStage) {
       this.primaryStage = primaryStage;
       this.primaryStage.setTitle("Login");
+      this.primaryStage.initStyle(StageStyle.UNDECORATED);
 
-      initRootLayout();
-
- 
-  }
-  
-  /**
-   * Initializes the root layout.
-   */
-  public void initRootLayout() {
       try {
-          // Load root layout from fxml file.
           FXMLLoader loader = new FXMLLoader();
           loader.setLocation(mainApp.class.getResource("/views/Login.fxml"));
           rootLayout = (AnchorPane) loader.load();
           
-          // Show the scene containing the root layout.
           Scene scene = new Scene(rootLayout);
+          scene.getStylesheets().add(getClass().getResource("mainStyle.css").toExternalForm());
+          
           primaryStage.setScene(scene);
           primaryStage.show();
       } catch (IOException e) {
@@ -47,13 +39,13 @@ public class mainApp extends Application {
       }
   }
   
-/**
- * Returns the main stage.
- * @return
- */
-public Stage getPrimaryStage() {
-	return primaryStage;
-}
+  /**
+   * Returns the main stage.
+   * @return
+   */
+  public Stage getPrimaryStage() {
+	  return primaryStage;
+  }
 
   public static void main(String[] args) {
       launch(args);
